@@ -1,0 +1,65 @@
+<!-- <div class="container">
+    <div class="details">
+      
+  
+      <form [formGroup]="loginForm" (ngSubmit)="submit()">
+        <div class="input-container">
+        <label>Email</label>
+        <div>
+        <input type="text" placeholder="abc@xyz" formControlName="username">
+       
+    </div>
+    <div  class="error-list" *ngIf="fc['username'].errors && isSubmitted">
+        <div *ngIf="fc['username'].errors['required']">Should Not be empty</div>
+      
+        </div>
+</div>
+<div class="input-container">
+    <label>Password</label>
+    <div>
+    <input type="password" placeholder="abc@xyz.com" formControlName="password"/>
+</div>
+<div  class="error-list" *ngIf="fc['password'].errors && isSubmitted">
+    <div *ngIf="fc['password'].errors['required']">Should Not be empty</div>
+    
+    </div>
+</div>
+<div class="button">
+    <button type="submit">Submit</button>
+</div>
+  
+     
+    
+      </form>
+    </div>
+  </div> -->
+  <button class="sign"><a routerLink="/add_user">Sign Up👤</a></button>
+  <div class="container">
+    <div class="details">
+      <form [formGroup]="loginForm" (ngSubmit)="submit()" class="login-form">
+        <div class="input-container">
+          <label>Name</label>
+          <div>
+            <input type="text" placeholder="abc@xyz" formControlName="username">
+          </div>
+          <div class="error-list" *ngIf="fc['username'].errors && isSubmitted">
+            <div *ngIf="fc['username'].errors['required']">Should Not be empty</div>
+          </div>
+        </div>
+        <div class="input-container">
+          <label>Password</label>
+          <div>
+            <input type="password" placeholder="*********" formControlName="password" />
+          </div>
+          <div class="error-list" *ngIf="fc['password'].errors && isSubmitted">
+            <div *ngIf="fc['password'].errors['required']">Should Not be empty</div>
+          </div>
+        </div>
+        <div class="button">
+          <button class="btn-outline-danger" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  

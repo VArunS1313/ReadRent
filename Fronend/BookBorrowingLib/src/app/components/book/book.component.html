@@ -1,0 +1,93 @@
+<!-- 
+<div *ngIf="book"><p>book works! {{book.name}}</p>
+<div class="card mb-3" style="max-width: 540px;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="../../assets/2.jpg" class="card-img" alt="{{book.name}}">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{book.name}}</h5>
+          <div class="pop">
+            <div *ngFor="let star of getStars(book.rating)">
+                <span>⭐</span>
+                
+              </div>
+            </div>
+          <p class="card-text">{{book.discription}}</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- <div *ngIf="book" class="container">
+    <p>book works! {{book.name}}</p>
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="../../assets/2.jpg" class="card-img" alt="{{book.name}}">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{book.name}}</h5>
+            <div class="pop">
+              <div *ngFor="let star of getStars(book.rating)">
+                <span>⭐</span>
+              </div>
+            </div>
+            <p class="card-text">{{book.discription}}</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   -->
+   <app-notfound [visible]="!book"
+   notFoundMessage="book Page Is Empty!"
+   resetLinkText="Go To Homepage">
+</app-notfound>
+   <div *ngIf="book" class="container">
+    <img src="../../assets/{{book.bookId}}.jpg"  onerror="this.onerror=null;this.src='../../assets/flower.jpg';"[alt]="book.name">
+  
+    <div class="details">
+      <div class="header">
+        <span class="name">
+          {{book.name}}
+        </span>
+        <div class="pop favr">
+            <div *ngFor="let star of getStars(book.rating)">
+                <span>⭐</span>
+                
+              </div>
+            </div>
+       
+      </div>
+     
+        <div class="price">
+            <span>
+              {{book.author}}
+            </span>
+          </div>
+  
+      <div class="origins">
+       <p>{{book.discription}}</p>
+      </div>
+  
+      
+      <div class="cook-time">
+        
+        <span>Genre: {{book.genre}}</span>
+       
+       
+      </div>
+      
+      
+  
+      
+  
+      <button (click)="bookborrow(book.bookId)" [disabled]="book.lent_by_user_id==userid">Borrow it!!</button>
+  
+    </div>
+  </div>

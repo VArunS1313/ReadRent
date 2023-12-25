@@ -1,0 +1,41 @@
+<p>add-user works!</p>
+<div class="container">
+    <div class="details">
+      <form [formGroup]="adduserForm" (ngSubmit)="submit()" class="login-form">
+        <div class="input-container">
+          <label>Name</label>
+          <div>
+            <input type="text" placeholder="abc" formControlName="username">
+          </div>
+          <div class="error-list" *ngIf="fc['username'].errors && isSubmitted">
+            <div *ngIf="fc['username'].errors['required']">Should Not be empty</div>
+            
+          </div>
+        </div>
+        <div class="input-container">
+          <label>Email</label>
+          <div>
+            <input type="text" placeholder="abc" formControlName="userEmail" />
+          </div>
+          <div class="error-list" *ngIf="fc['userEmail'].errors && isSubmitted">
+            <div *ngIf="fc['userEmail'].errors['required']">Should Not be empty</div>
+            <div *ngIf="fc['userEmail'].errors['email']">Wrong email</div>
+          </div>
+        </div>
+        <div class="input-container">
+            <label>Password</label>
+            <div>
+              <input type="password" placeholder="*****" formControlName="password">
+            </div>
+            <div class="error-list" *ngIf="fc['password'].errors && isSubmitted">
+              <div *ngIf="fc['password'].errors['required']">Should Not be empty</div>
+              
+            </div>
+          </div>
+        <div class="button">
+            <button class="btn-outline-danger" type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+        

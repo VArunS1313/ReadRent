@@ -1,0 +1,46 @@
+<app-search></app-search>
+<ul>
+    <li *ngFor="let book of books">
+      
+        <a routerLink="/book/{{book.bookId}}">
+        <img src="../../assets/{{book.bookId}}.jpg"  onerror="this.onerror=null;this.src='../../assets/flower.jpg';"[alt]="book.name">
+            <div class="content">
+                <div class="name">
+                {{book.name}}
+            </div>
+         
+            <div class="stars">
+                
+                
+                <div class="pop">
+                <div *ngFor="let star of getStars(book.rating)">
+                    <span>⭐</span>
+                    
+                  </div>
+                </div>
+
+            </div>
+            <div class="product-item-footer">
+                
+      
+                <div class="author">
+                  <span>🖊️</span>
+                  {{book.author}}
+                </div>
+              </div>
+      
+              <div class="genre">
+                <span>
+                  {{book.genre}}
+                </span>
+              </div>
+            </div>
+
+
+          
+
+        
+        </a>
+    </li>
+
+</ul>

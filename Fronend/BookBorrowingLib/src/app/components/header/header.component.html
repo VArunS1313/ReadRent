@@ -1,0 +1,21 @@
+<header>
+    <div class="container">
+      <a routerLink="/home" class="logo">Libreary!</a>
+      <nav>
+        <ul>
+          <li >
+            <a (click)="login()">{{ islogin ? 'logOut' : 'login' }}</a>
+          </li>
+          <li >
+            <a routerLink="/user">User</a>
+            <a routerLink="/add_book">Add Book➕</a>
+               
+          </li>
+           
+        
+         
+         
+        </ul>
+      </nav>
+    </div>
+  </header>
