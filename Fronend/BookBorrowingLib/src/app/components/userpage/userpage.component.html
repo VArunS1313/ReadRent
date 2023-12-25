@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div *ngIf="userr">
+<div class="card">
+  <img src="../../assets/user.jpg" alt="user 👤" style="width:100%">
+  <h1>{{userr.username}}</h1>
+  <p class="title">email: {{userr.userEmail}}</p>
+  <p>Lib Token Left {{userr.lib_token}}</p>
+  <!-- <a href="#"><i class="fa fa-dribbble"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  <a href="#"><i class="fa fa-linkedin"></i></a>
+  <a href="#"><i class="fa fa-facebook"></i></a>
+  <p><button>Contact</button></p> -->
+</div>
+</div>
+<div class="container">
+    <div class="book-list list">
+      <h2>Your Books</h2>
+      <div *ngIf="lentBooks && lentBooks.length > 0; else nolentBooks">
+      <ul>
+        <li *ngFor="let book of lentBooks">
+          <span>{{book.genre}}</span>
+          <span>{{book.name}}</span>
+          <button [disabled]="!book.is_available">{{ book.is_available ? 'Action' : 'No Action' }}</button>
+        </li>
+        
+      </ul>
+      </div>
+      <ng-template #nolentBooks>
+        <p>No book is borrowed.</p>
+      </ng-template>
+    </div>
+  
+    <div class="book-list">
+      <h2>Borrowed Books</h2>
+      <div *ngIf="borrowBooks && borrowBooks.length > 0; else noborrowbooks">
+      <ul>
+        <li *ngFor="let bo of borrowBooks">
+          <span>{{bo.genre}}</span>
+          <span>{{bo.name}}</span>
+          <button (click)="return(bo.bookId)">Return</button>
+        </li>
+      </ul>
+    </div>
+    <ng-template #noborrowbooks>
+        <p>No book is borrowed.</p>
+      </ng-template>
+    </div>
+  </div>

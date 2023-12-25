@@ -1,0 +1,93 @@
+<!-- <div class="container">
+    <div class="details">
+      
+  
+      <form [formGroup]="loginForm" (ngSubmit)="submit()">
+        <div class="input-container">
+        <label>Email</label>
+        <div>
+        <input type="text" placeholder="abc@xyz" formControlName="username">
+       
+    </div>
+    <div  class="error-list" *ngIf="fc['username'].errors && isSubmitted">
+        <div *ngIf="fc['username'].errors['required']">Should Not be empty</div>
+      
+        </div>
+</div>
+<div class="input-container">
+    <label>Password</label>
+    <div>
+    <input type="password" placeholder="abc@xyz.com" formControlName="password"/>
+</div>
+<div  class="error-list" *ngIf="fc['password'].errors && isSubmitted">
+    <div *ngIf="fc['password'].errors['required']">Should Not be empty</div>
+    
+    </div>
+</div>
+<div class="button">
+    <button type="submit">Submit</button>
+</div>
+  
+     
+    
+      </form>
+    </div>
+  </div> -->
+  <div class="container">
+    <div class="details">
+      <form [formGroup]="addbookForm" (ngSubmit)="submit()" class="login-form">
+        <div class="input-container">
+          <label>Book Name</label>
+          <div>
+            <input type="text" placeholder="abc" formControlName="name">
+          </div>
+          <div class="error-list" *ngIf="fc['name'].errors && isSubmitted">
+            <div *ngIf="fc['name'].errors['required']">Should Not be empty</div>
+            
+          </div>
+        </div>
+        <div class="input-container">
+          <label>Author</label>
+          <div>
+            <input type="text" placeholder="abc" formControlName="author" />
+          </div>
+          <div class="error-list" *ngIf="fc['author'].errors && isSubmitted">
+            <div *ngIf="fc['author'].errors['required']">Should Not be empty</div>
+          </div>
+        </div>
+        <div class="input-container">
+            <label>Genre</label>
+            <div>
+              <input type="text" placeholder="abc" formControlName="genre" />
+            </div>
+            <div class="error-list" *ngIf="fc['genre'].errors && isSubmitted">
+              <div *ngIf="fc['genre'].errors['required']">Should Not be empty</div>
+            </div>
+          </div>
+          <div class="input-container">
+            <label>Rateing</label>
+            <div>
+              <input type="number" placeholder="0 to 5" formControlName="rating" />
+            </div>
+            <div class="error-list" *ngIf="fc['rating'].errors && isSubmitted">
+              <div *ngIf="fc['rating'].errors['required']">Should Not be empty</div>
+              <div *ngIf="fc['rating'].errors['invalidRating']">Enter a valid rating between 1 and 5</div>
+              <!-- <div *ngIf="fc['rating'].errors['ratingValidator']">Should be less then 5</div> -->
+            </div>
+          </div>
+          <div class="input-container">
+            <label>Discription</label>
+            <div>
+              <textarea type="text" placeholder="" formControlName="discription" ></textarea>
+            </div>
+            <div class="error-list" *ngIf="fc['discription'].errors && isSubmitted">
+              <div *ngIf="fc['discription'].errors['required']">Should Not be empty</div>
+            </div>
+          </div>
+        <div class="button">
+          <button class="btn-outline-danger" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
